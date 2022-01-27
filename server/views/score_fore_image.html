@@ -38,7 +38,7 @@
 
             
 
-            const socket = io("http://217.71.252.238:3001/")
+            const socket = io("217.71.252.238:3001/")
             
             function joinRoom(){
 
@@ -53,15 +53,13 @@
             })
             
             socket.on("gamefieldupdate", (servergamefield, socketarray) =>{
-                alert("hallo")
                 gamefield = servergamefield
                 playerarray = socketarray
                 checkwin()
             })
 
 
-            socket.on("view", (servergamefield, servercounter, position) => {
-                alert("hallo")    
+            socket.on("view", (servergamefield, servercounter, position) => {   
                 enemyturn(position)
                     
 
